@@ -1,0 +1,26 @@
+<template name="feedbacks">
+  <view class="page-section">
+    <view class="section-title">
+      <view>
+        投诉处理
+      </view>
+      <view>
+        更多>>
+      </view>
+    </view>
+    <block wx:for="{{feedbacks}}" wx:for-index="idx" wx:key="{{item.CPID}}">
+      <navigator url="/pages/study/chapter/chapter_exec?id={{item.CPID}}&txt={{item.CNME}}">
+        <view class="cpt-item">
+          <view class="cpt-img">
+            <image src='/image/dot.png' style="background-color:{{COLOR[(idx+2)%COLOR.length]}};"></image>
+          </view>
+          <view class="cpt-content">
+            <view class="cpt-head">
+              <text class="cpt-space">{{item.CNME}}</text>
+            </view>
+          </view>
+        </view>
+      </navigator>
+    </block>
+  </view>
+</template>

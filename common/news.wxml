@@ -1,0 +1,26 @@
+<template name="news">
+  <view class="page-section">
+    <view class="section-title">
+      <view>
+        新闻公告
+      </view>
+      <view>
+        更多>>
+      </view>
+    </view>
+    <block wx:for="{{news}}" wx:for-index="idx" wx:key="{{item.CPID}}">
+      <navigator url="/pages/study/chapter/chapter_exec?id={{item.CPID}}&txt={{item.CNME}}">
+        <view class="cpt-item">
+          <view class="cpt-img">
+            <image src='/image/dot.png' style="background-color:{{COLOR[idx%COLOR.length]}};"></image>
+          </view>
+          <view class="cpt-content">
+            <view class="cpt-head">
+              <text class="cpt-space">{{item.CNME}}</text>
+            </view>
+          </view>
+        </view>
+      </navigator>
+    </block>
+  </view>
+</template>

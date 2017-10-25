@@ -1,0 +1,26 @@
+<template name="goodrivers">
+  <view class="page-section">
+    <view class="section-title">
+      <view>
+        明星河道
+      </view>
+      <view>
+        全部排名>>
+      </view>
+    </view>
+    <block wx:for="{{goodrivers}}" wx:for-index="idx" wx:key="{{item.CPID}}">
+      <navigator url="/pages/goodrivers?id={{item.CPID}}&txt={{item.CNME}}">
+        <view class="cpt-item">
+          <view class="cpt-img-50">
+            <image src='/image/g{{idx+1}}.png'></image>
+          </view>
+          <view class="cpt-content">
+            <view class="cpt-head">
+              <text class="cpt-space">{{item.CNME}}</text>
+            </view>
+          </view>
+        </view>
+      </navigator>
+    </block>
+  </view>
+</template>

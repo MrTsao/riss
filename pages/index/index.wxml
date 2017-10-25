@@ -1,0 +1,26 @@
+<!--index.wxml-->
+<import src="/common/news.wxml" />
+<import src="/common/goodrivers.wxml" />
+<import src="/common/riverinfo.wxml" />
+<import src="/common/feedback.wxml" />
+<import src="/common/workitems.wxml" />
+<view class="container">
+  <view class="page-section page-section-gap">
+    <view class="ad-item">
+      <!-- <view class="img">
+        <image src="/image/123.png"></image>
+      </view> -->
+      <view class="txt">
+        <view class="head">亚润河长
+        </view>
+        <view class="sub-head">『水利监控平台』
+        </view>
+      </view>
+    </view>
+  </view>
+  <template is="news" data="{{news: news,COLOR:COLOR}}" />
+  <template is="goodrivers" data="{{goodrivers: goodrivers}}" />
+  <template is="riverinfo" data="{{riverinfo: riverinfo,COLOR:COLOR}}" />
+  <template is="feedbacks" data="{{feedbacks: feedbacks,COLOR:COLOR}}" />
+  <template is="workitems" data="{{workitems: workitems,COLOR:COLOR}}" />
+</view>

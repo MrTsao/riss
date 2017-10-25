@@ -1,0 +1,42 @@
+{
+  "pages":[
+    "pages/index/index"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "亚润河长",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "color": "#808080",
+    "selectedColor": "#4169E1",
+    "backgroundColor": "#F5F5F5",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "image/home.png",
+        "selectedIconPath": "image/home2.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/focus/focus",
+        "iconPath": "image/river.png",
+        "selectedIconPath": "image/river2.png",
+        "text": "河道概况"
+      },
+      {
+        "pagePath": "pages/services/servicelist",
+        "iconPath": "image/works.png",
+        "selectedIconPath": "image/works2.png",
+        "text": "督办事项"
+      },
+      {
+        "pagePath": "pages/services/servicelist",
+        "iconPath": "image/feedback.png",
+        "selectedIconPath": "image/feedback2.png",
+        "text": "反馈处理"
+      }
+    ]
+  }
+}

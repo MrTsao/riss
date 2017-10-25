@@ -1,0 +1,29 @@
+.pane {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  color: #696969;
+  font-size: 28rpx;
+}
+
+.item {
+  background: #fff;
+  padding-top: 6rpx;
+  display: flex;
+  flex-direction: column;
+  margin: 0rpx 0rpx; 
+}
+
+.item .img {
+  height: 200rpx;
+  width: 160rpx;
+  border-radius: 10rpx;
+}
+
+.item .img image{
+  height: 196rpx;
+  width: 156rpx;
+  padding: 2rpx 2rpx;
+  border-radius: 14rpx;
+}
