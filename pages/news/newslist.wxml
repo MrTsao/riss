@@ -1,0 +1,15 @@
+<!--pages/news/newslist.wxml-->
+<import src="/common/news.wxml" />
+<swiper autoplay="true" indicator-active-color="white" indicator-color="#C0C0C0" indicator-dots="true" circular="true" interval="5000" duration="500" class="swiper">
+  <block wx:for="{{news}}" wx:for-index="idx" wx:key="item.id">
+    <navigator url="news?id={{item.CPID}}&txt={{item.CNME}}">
+      <swiper-item>
+        <view class="swiper-shadow" wx:if="{{idx<6}}">
+        </view>
+        <label class="swiper-text">{{item.CNME}}</label>
+        <image src="/image/news/{{item.CPID}}.jpg" class="swiper-item" mode="aspectFill" />
+      </swiper-item>
+    </navigator>
+  </block>
+</swiper>
+<template is="news" data="{{news: news,COLOR:COLOR}}" />

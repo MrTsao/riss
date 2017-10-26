@@ -1,0 +1,6 @@
+<!--pages/works/worklist.wxml-->
+
+<import src="/common/workitems.wxml" />
+<view class="container">
+  <template is="workitems" data="{{workitems: workitems,COLOR:COLOR}}" />
+</view>

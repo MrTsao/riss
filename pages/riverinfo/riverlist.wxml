@@ -1,0 +1,6 @@
+<!--pages/riverinfo/riverlist.wxml-->
+
+<import src="/common/riverinfo.wxml" />
+<view class="container">
+  <template is="riverinfo" data="{{showhead:false, riverinfo: riverinfo,COLOR:COLOR}}" />
+</view>

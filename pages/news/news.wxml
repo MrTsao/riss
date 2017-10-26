@@ -1,0 +1,19 @@
+<!--pages/news/news.wxml-->
+<!--pages/focus/focusItem.wxml-->
+<import src="../../common/foot.wxml" />
+<VIEW>
+  <swiper autoplay="{{false}}" indicator-dots="{{false}}" circular="{{false}}" class="swiper">
+    <swiper-item>
+      <view class="swiper-shadow">
+      </view>
+      <label class="swiper-text">{{TXT}}</label>
+      <image src="{{NEWS[IDX].url}}" class="swiper-item" mode="aspectFill" />
+    </swiper-item>
+  </swiper>
+</VIEW>
+<view class="richtxt">
+  <block wx:for="{{NEWS[IDX].NODES}}" wx:for-item="itm" wx:for-index="idx" wx:key="itm.id" >
+    <rich-text nodes="　　{{itm.INFO_CONTENT}}" />
+  </block>
+</view>
+<template is="foot" />

@@ -1,0 +1,3 @@
+/* pages/works/worklist.wxss */
+
+@import "../../common/lib/news.wxss";

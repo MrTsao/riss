@@ -1,0 +1,3 @@
+/* pages/riverinfo/riverlist.wxss */
+
+@import "../../common/lib/riverinfo.wxss";

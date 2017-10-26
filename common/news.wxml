@@ -1,15 +1,17 @@
 <template name="news">
   <view class="page-section">
-    <view class="section-title">
+    <view wx:if="{{showhead}}" class="section-title">
       <view>
         新闻公告
       </view>
       <view>
-        更多>>
+        <navigator url="/pages/news/newslist">
+          更多>>
+        </navigator>
       </view>
     </view>
     <block wx:for="{{news}}" wx:for-index="idx" wx:key="{{item.CPID}}">
-      <navigator url="/pages/study/chapter/chapter_exec?id={{item.CPID}}&txt={{item.CNME}}">
+      <navigator url="/pages/news/news?id={{item.CPID}}&txt={{item.CNME}}">
         <view class="cpt-item">
           <view class="cpt-img">
             <image src='/image/dot.png' style="background-color:{{COLOR[idx%COLOR.length]}};"></image>

@@ -1,15 +1,17 @@
 <template name="feedbacks">
   <view class="page-section">
-    <view class="section-title">
+    <view wx:if="{{showhead}}" class="section-title">
       <view>
         投诉处理
       </view>
       <view>
-        更多>>
+        <navigator openType="switchTab" url="/pages/feedback/feedbacklist" hover-class="none">
+          更多>>
+        </navigator>
       </view>
     </view>
     <block wx:for="{{feedbacks}}" wx:for-index="idx" wx:key="{{item.CPID}}">
-      <navigator url="/pages/study/chapter/chapter_exec?id={{item.CPID}}&txt={{item.CNME}}">
+      <navigator url="/pages/feedback/feedback?id={{item.CPID}}&txt={{item.CNME}}">
         <view class="cpt-item">
           <view class="cpt-img">
             <image src='/image/dot.png' style="background-color:{{COLOR[(idx+2)%COLOR.length]}};"></image>

@@ -1,6 +1,6 @@
 <template name="goodrivers">
   <view class="page-section">
-    <view class="section-title">
+    <view wx:if="{{showhead}}" class="section-title">
       <view>
         明星河道
       </view>

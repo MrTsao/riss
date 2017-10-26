@@ -1,0 +1,3 @@
+/* pages/feedback/feedbacklist.wxss */
+
+@import "../../common/lib/news.wxss";

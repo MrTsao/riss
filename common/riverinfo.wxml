@@ -1,16 +1,18 @@
 <template name="riverinfo">
   <view class="page-section">
-    <view class="section-title">
+    <view wx:if="{{showhead}}" class="section-title">
       <view>
         河道概况
       </view>
       <view>
-        查看全部>>
+        <navigator openType="switchTab" url="/pages/riverinfo/riverlist" hover-class="none">
+          更多>>
+        </navigator>
       </view>
     </view>
     <view class="pane">
       <block wx:for="{{riverinfo}}" wx:for-index="idx" wx:key="{{item.CPID}}">
-        <navigator url="/pages/riverinfo?id={{item.CPID}}&txt={{item.CNME}}">
+        <navigator url="/pages/riverinfo/riverinfo?id={{item.CPID}}&txt={{item.CNME}}">
           <view class="item">
             <view class="img" style="background-color:{{COLOR[idx%COLOR.length]}};">
               <image src="/image/rivers/{{item.CPID}}.jpg"></image>

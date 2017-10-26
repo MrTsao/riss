@@ -1,15 +1,17 @@
 <template name="workitems">
   <view class="page-section">
-    <view class="section-title">
+    <view wx:if="{{showhead}}" class="section-title">
       <view>
         督办事项
       </view>
       <view>
-        更多>>
+        <navigator openType="switchTab" url="/pages/works/worklist" hover-class="none">
+          更多>>
+        </navigator>
       </view>
     </view>
     <block wx:for="{{workitems}}" wx:for-index="idx" wx:key="{{item.CPID}}">
-      <navigator url="/pages/workitems?id={{item.CPID}}&txt={{item.CNME}}">
+      <navigator url="/pages/works/work?id={{item.CPID}}&txt={{item.CNME}}">
         <view class="cpt-item">
           <view class="cpt-img">
             <image src='/image/dot.png' style="background-color:{{COLOR[idx%COLOR.length]}};"></image>

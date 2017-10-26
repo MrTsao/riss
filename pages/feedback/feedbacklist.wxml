@@ -1,0 +1,5 @@
+<!--pages/feedback/feedbacklist.wxml-->
+<import src="/common/feedback.wxml" />
+<view class="container">
+  <template is="feedbacks" data="{{feedbacks: feedbacks,COLOR:COLOR}}" />
+</view>
