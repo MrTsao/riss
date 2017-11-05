@@ -1,15 +1,17 @@
 <template name="goodrivers">
   <view class="page-section">
+    <view class="space"></view>
     <view wx:if="{{showhead}}" class="section-title">
       <view>
         明星河道
       </view>
-      <view>
+      <view class='more'>
         全部排名>>
       </view>
     </view>
     <block wx:for="{{goodrivers}}" wx:for-index="idx" wx:key="{{item.CPID}}">
       <navigator url="/pages/goodrivers?id={{item.CPID}}&txt={{item.CNME}}">
+      <view class="page-content">
         <view class="cpt-item">
           <view class="cpt-img-50">
             <image src='/image/g{{idx+1}}.png'></image>
@@ -19,6 +21,7 @@
               <text class="cpt-space">{{item.CNME}}</text>
             </view>
           </view>
+        </view>
         </view>
       </navigator>
     </block>

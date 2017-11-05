@@ -1,10 +1,11 @@
 <template name="news">
   <view class="page-section">
+    <view class="space"></view>
     <view wx:if="{{showhead}}" class="section-title">
       <view>
         新闻公告
       </view>
-      <view>
+      <view class='more'>
         <navigator url="/pages/news/newslist">
           更多>>
         </navigator>
@@ -12,13 +13,15 @@
     </view>
     <block wx:for="{{news}}" wx:for-index="idx" wx:key="{{item.CPID}}">
       <navigator url="/pages/news/news?id={{item.CPID}}&txt={{item.CNME}}">
-        <view class="cpt-item">
-          <view class="cpt-img">
-            <image src='/image/dot.png' style="background-color:{{COLOR[idx%COLOR.length]}};"></image>
-          </view>
-          <view class="cpt-content">
-            <view class="cpt-head">
-              <text class="cpt-space">{{item.CNME}}</text>
+        <view class="page-content">
+          <view class="cpt-item">
+            <view class="cpt-img">
+              <image src='/image/dot.png' style="background-color:{{COLOR[idx%COLOR.length]}};"></image>
+            </view>
+            <view class="cpt-content">
+              <view class="cpt-head">
+                <text class="cpt-space">{{item.CNME}}</text>
+              </view>
             </view>
           </view>
         </view>

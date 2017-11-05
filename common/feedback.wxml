@@ -1,10 +1,11 @@
 <template name="feedbacks">
   <view class="page-section">
+    <view class="space"></view>
     <view wx:if="{{showhead}}" class="section-title">
       <view>
         投诉处理
       </view>
-      <view>
+      <view class='more'>
         <navigator openType="switchTab" url="/pages/feedback/feedbacklist" hover-class="none">
           更多>>
         </navigator>
@@ -12,9 +13,11 @@
     </view>
     <block wx:for="{{feedbacks}}" wx:for-index="idx" wx:key="{{item.CPID}}">
       <navigator url="/pages/feedback/feedback?id={{item.CPID}}&txt={{item.CNME}}">
+      
+      <view class="page-content">
         <view class="cpt-item">
           <view class="cpt-img">
-            <image src='/image/dot.png' style="background-color:{{COLOR[(idx+2)%COLOR.length]}};"></image>
+            <image src='/image/dot.png' style="background-color:{{COLOR[idx%COLOR.length]}};"></image>
           </view>
           <view class="cpt-content">
             <view class="cpt-head">
@@ -22,6 +25,8 @@
             </view>
           </view>
         </view>
+        </view>
+      
       </navigator>
     </block>
   </view>

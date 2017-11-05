@@ -1,6 +1,6 @@
 .cpt-item {
-  border-bottom: 1rpx solid #ddd;
-  padding: 20rpx 20rpx;
+  border-top: 1rpx dashed #eee;
+  padding: 20rpx 0rpx;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -51,7 +51,7 @@
 
 .cpt-head {
   color: #696969;
-  font-size: 30rpx;
+  font-size: 28rpx;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;

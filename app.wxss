@@ -55,21 +55,35 @@
   width: 100%;
   margin: 0;
   background: #ffffff;
-  border-top: 1px solid #eee;
+}
+
+.page-section .space{
+  background-color: #F5F5F5;
+  padding: 10rpx 0rpx;
 }
 
 .section-title{
   padding: 20rpx 30rpx;
-  background-color: #F5F5F5;
   margin-left: -1rpx;
-  border-bottom: 1rpx solid #ddd;
-  color: #808080;
-  font-size: 32rpx;
+  color: #000;
+  font-size: 31rpx;
   letter-spacing: 5rpx;
+  font-weight: bolder;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
+
+.section-title .more{
+  font-size: 26rpx;
+  font-weight: normal;
+  color: #aaa;
+}
+
+.page-content{
+  padding: 0rpx 30rpx;
+}
+
 
 .page-section_center {
   display: flex;

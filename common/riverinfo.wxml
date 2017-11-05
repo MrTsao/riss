@@ -1,10 +1,11 @@
 <template name="riverinfo">
   <view class="page-section">
+  <view class="space"></view>
     <view wx:if="{{showhead}}" class="section-title">
       <view>
         河道概况
       </view>
-      <view>
+      <view class='more'>
         <navigator openType="switchTab" url="/pages/riverinfo/riverlist" hover-class="none">
           更多>>
         </navigator>
