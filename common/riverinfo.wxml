@@ -6,7 +6,7 @@
         河道概况
       </view>
       <view class='more'>
-        <navigator openType="switchTab" url="/pages/riverinfo/riverlist" hover-class="none">
+        <navigator url="/pages/riverinfo/allriver" hover-class="none">
           更多>>
         </navigator>
       </view>

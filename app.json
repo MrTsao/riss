@@ -8,13 +8,15 @@
     "pages/feedback/feedback",
     "pages/feedback/feedbacklist",
     "pages/works/work",
-    "pages/works/worklist"
+    "pages/works/worklist",
+    "pages/riverinfo/allriver"
   ],
   "window": {
-    "backgroundTextStyle": "light",
+    "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "亚润河长",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true
   },
   "tabBar": {
     "color": "#808080",

@@ -14,10 +14,10 @@ Page({
     }, {
       id: "item-2",
       url: "https://www.yondo.cc/ris/images/101.jpg"
-    }, {
-      id: "item-2",
-      url: "https://www.yondo.cc/ris/images/103.jpg"
-    }],
+      }, {
+        id: "item-2",
+        url: "https://www.yondo.cc/ris/images/103.jpg"
+      }],
   },
 
   onLoad: function (options) {

@@ -41,6 +41,10 @@ Page({
       })
     });
   },
+  onPullDownRefresh() {
+    
+    wx.stopPullDownRefresh()
+  },
   /**
    * 用户点击右上角分享
    */
