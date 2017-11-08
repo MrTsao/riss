@@ -13,26 +13,30 @@
     <view>
       <block wx:for="{{rivers}}" wx:key="item.riverNo">
         <view wx:if="{{index%2==0}}" class="river_item">
-          <image src='https://www.yondo.cc/ris/images/10{{index%3}}.jpg'></image>
-          <view class="river_content">
-            <label> {{item.riverName}}({{item.riverLength}})</label>
-            <view>
-              {{item.startName}}~{{item.endName}}
+          <navigator url="/pages/riverinfo/riverinfo?id={{item.riverNo}}&nme={{item.riverName}}" hover-class="none">
+            <image src='https://www.yondo.cc/ris/images/10{{index%3}}.jpg'></image>
+            <view class="river_content">
+              <label> {{item.riverName}}({{item.riverLength}})</label>
+              <view>
+                {{item.startName}}~{{item.endName}}
+              </view>
             </view>
-          </view>
+          </navigator>
         </view>
       </block>
     </view>
     <view>
       <block wx:for="{{rivers}}" wx:key="item.riverNo">
         <view wx:if="{{index%2==1}}" class="river_item">
-          <image src='https://www.yondo.cc/ris/images/10{{index%3}}.jpg' mode="scaleToFill" ></image>
-          <view class="river_content">
-            <label> {{item.riverName}}({{item.riverLength}})</label>
-            <view>
-              {{item.startName}}~{{item.endName}}
+          <navigator url="/pages/riverinfo/riverinfo?id={{item.riverNo}}&nme={{item.riverName}}" hover-class="none">
+            <image src='https://www.yondo.cc/ris/images/10{{index%3}}.jpg' mode="scaleToFill"></image>
+            <view class="river_content">
+              <label> {{item.riverName}}({{item.riverLength}})</label>
+              <view>
+                {{item.startName}}~{{item.endName}}
+              </view>
             </view>
-          </view>
+          </navigator>
         </view>
       </block>
     </view>

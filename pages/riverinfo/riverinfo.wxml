@@ -1,2 +1,16 @@
 <!--pages/riverinfo/riverinfo.wxml-->
-<text></text>
+<view class="container">
+  <view class="page-section">
+    <image src="https://www.yondo.cc/ris/images/101.jpg" class="swiper-item" mode="scaleToFill" />
+  </view>
+  <view class="funlist">
+    <label>河道水情</label>
+    <label>实时视频</label>
+    <label>一河一策</label>
+    <label>河道巡视</label>
+    <label>投诉信息</label>
+  </view>
+  <view>
+  {{rivers[idx].chiefDuty}}
+  </view>
+</view>

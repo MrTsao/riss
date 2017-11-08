@@ -1,66 +1,56 @@
-// pages/riverinfo/riverinfo.js
+// pages/riverinfo/allriver.js
+var util = require('../../utils/util.js');
+var app = getApp();
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
-  
+    PAGE: "RIVER_LIST",
+    rivers: [],
+    id: '',
+    nme: '',
+    idx: -1
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (options) {
-  
+    //调用应用实例的方法获取全局数据
+    var that = this
+    var stitle = options.nme || ""
+    wx.setNavigationBarTitle({
+      title: stitle,
+    })
+    util.Post(this, "LOAD", null, function (that, data) {
+      let idx = -1
+      for (var i = 0; i < data.data.length; i++) {
+        if (data.data[i].riverNo == options.id) {
+          idx = i;
+          break;
+        }
+      }
+      that.setData({
+        rivers: data.data,
+        id: options.id,
+        nme: options.nme,
+        idx: idx
+      })
+    });
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
+  onPullDownRefresh() {
+    util.Post(this, "LOAD", null, function (that, data) {
+      that.setData({
+        rivers: data.data
+      })
+    });
+    wx.stopPullDownRefresh()
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
+  onReachBottom: function (e) {
   },
 
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-  
+
   }
 })

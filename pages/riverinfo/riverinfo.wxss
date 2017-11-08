@@ -1,1 +1,31 @@
 /* pages/riverinfo/riverinfo.wxss */
+
+swiper {
+  height: 200rpx;
+  width: 100%;
+  letter-spacing: 5rpx;
+}
+
+.swiper-item {
+  height: 200rpx;
+  width: 100%;
+}
+
+.funlist {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  padding: 10rpx 10rpx;
+  width: 100%;
+}
+
+.funlist label {
+  width: 80rpx;
+  height: 80rpx;
+  padding: 10rpx 10rpx;
+  text-align: center;
+  font-size: 30rpx;
+  border: 1rpx solid #333;
+  border-radius: 80rpx;
+}
