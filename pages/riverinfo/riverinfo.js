@@ -10,7 +10,8 @@ Page({
     rivers: [],
     id: '',
     nme: '',
-    idx: -1
+    idx: 0,
+    status: 0
   },
 
   onLoad: function (options) {
@@ -35,6 +36,11 @@ Page({
         idx: idx
       })
     });
+  },
+  changestatus:function(e){
+    this.setData({
+      status:e.target.dataset.status
+    })
   },
   onPullDownRefresh() {
     util.Post(this, "LOAD", null, function (that, data) {
