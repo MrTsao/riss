@@ -1,4 +1,5 @@
 /* pages/focus/focusItem.wxss */
+
 .head {
   display: flex;
   flex-direction: column;
@@ -82,10 +83,16 @@
   z-index: 2;
 }
 
-.richtxt{
+.richtxt {
   overflow: hidden;
   width: 98%;
   margin: 5rpx auto;
   font-size: 32rpx;
   color: #555;
+  letter-spacing: 8rpx;
+  line-height: 50rpx;
+}
+
+.richtxt rich-text {
+  display: block;
 }
