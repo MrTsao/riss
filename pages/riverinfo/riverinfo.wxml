@@ -4,14 +4,36 @@
     <image src="https://www.yondo.cc/ris/images/10{{idx%4}}.jpg" class="swiper-item" mode="scaleToFill" />
   </view>
   <view class="funlist">
-    <label data-status='0' bindtap='changestatus' style="{{(status=='0'?'background-color:#eee;':'')}}" >河道水情</label>
+    <label data-status='0' bindtap='changestatus' style="{{(status=='0'?'background-color:#eee;':'')}}">河道水情</label>
     <label data-status='1' bindtap='changestatus' style="{{(status=='1'?'background-color:#eee;':'')}}">实时视频</label>
     <label data-status='2' bindtap='changestatus' style="{{(status=='2'?'background-color:#eee;':'')}}">一河一策</label>
     <label data-status='3' bindtap='changestatus' style="{{(status=='3'?'background-color:#eee;':'')}}">河道巡视</label>
     <label data-status='4' bindtap='changestatus' style="{{(status=='4'?'background-color:#eee;':'')}}">投诉信息</label>
   </view>
   <view wx:if="{{status == '0'}}" class="ptext">
-    {{rivers[idx].target}}
+    <view class="phead">
+      <label>{{rivers[idx].riverName}}</label>
+      <label>{{rivers[idx].levelName}}河道</label>
+    </view>
+    <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+      <view class="phead">
+        <label>水文段</label>
+        <view class="picker">
+          {{array[index]}}
+        </view>
+      </view>
+    </picker>
+    <view class="preal">
+      <label>实时监测数据</label>
+      <view class="pdata" >
+        <view>DO溶解氧</view>
+        <view>CODmn</view>
+        <view>NH3-H</view>
+        <view>TP</view>
+        <view>ORP</view>
+        <view>Transp</view>
+      </view>
+    </view>
   </view>
   <view wx:if="{{status == '1'}}" class="pvideo">
     <video src="https://www.yondo.cc/ris/images/11861574-1.mp4" controls="{{false}}" autoplay="{{true}}" loop="{{true}}" objectFit="fill"></video>

@@ -11,7 +11,9 @@ Page({
     id: '',
     nme: '',
     idx: 0,
-    status: 0
+    status: 0,
+    array: ['水文段1', '水文段2', '水文段3', '水文段4'],
+    index: 0
   },
 
   onLoad: function (options) {
@@ -37,9 +39,13 @@ Page({
       })
     });
   },
-  changestatus:function(e){
+  changestatus: function (e) {
     this.setData({
-      status:e.target.dataset.status
+      status: e.target.dataset.status
+    })
+  }, bindPickerChange: function (e) {
+    this.setData({
+      index: e.detail.value
     })
   },
   onPullDownRefresh() {

@@ -53,3 +53,27 @@ swiper {
   padding-top: 20rpx;
   text-indent: 70rpx;
 }
+
+.ptext label {
+  text-indent: 0rpx;
+}
+
+.phead {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20rpx 40rpx;
+  border-bottom: 1rpx solid #eee;
+}
+
+.preal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.pdata{
+  width: 100%;
+}
+

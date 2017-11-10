@@ -19,12 +19,6 @@ Page({
   //事件处理函数
   bindViewTap: function () {
   },
-  //展开或隐藏菜单
-  menucontrol: function (e) {
-    this.setData({
-      menuhide: !this.data.menuhide
-    })
-  },
   subitemcontrol: function (e) {
     this.setData({
       menuIndex: e.currentTarget.dataset.idx
@@ -33,16 +27,12 @@ Page({
   },
   onLoad: function () {
     var SysInfo = wx.getSystemInfoSync()
-    util.Post(this, "LOAD", null, function (that, data) {
-      that.setData({
-        height: SysInfo.windowHeight,
-        width: SysInfo.screenWidth,
-        chapters: data.CHAPTER
-      })
-    });
+    this.setData({
+      height: SysInfo.windowHeight,
+      width: SysInfo.screenWidth
+    })
   },
-  onPullDownRefresh() {
-    
+  onPullDownRefresh() {    
     wx.stopPullDownRefresh()
   },
   /**

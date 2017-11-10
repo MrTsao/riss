@@ -14,6 +14,7 @@
 <view class="richtxt">
   <block wx:for="{{NEWS[IDX].NODES}}" wx:for-item="itm" wx:for-index="idx" wx:key="itm.id" >
     <rich-text nodes="　　{{itm.INFO_CONTENT}}" />
+    <label>　</label>
   </block>
 </view>
 <template is="foot" />
