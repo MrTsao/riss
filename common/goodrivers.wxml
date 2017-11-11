@@ -6,22 +6,25 @@
         明星河道
       </view>
       <view class='more'>
-        全部排名>>
+        <navigator url="/pages/riverinfo/riverrank">
+          全部排名>>
+        </navigator>
       </view>
     </view>
     <block wx:for="{{goodrivers}}" wx:for-index="idx" wx:key="{{item.CPID}}">
-      <navigator url="/pages/goodrivers?id={{item.CPID}}&txt={{item.CNME}}">
-      <view class="page-content">
-        <view class="cpt-item">
-          <view class="cpt-img-50">
-            <image src='/image/g{{idx+1}}.png'></image>
-          </view>
-          <view class="cpt-content">
-            <view class="cpt-head">
-              <text class="cpt-space">{{item.CNME}}</text>
+      <navigator url="/pages/riverinfo/riverinfo?id={{item.CPID}}&nme={{item.CNME}}">
+        <view class="page-content">
+          <view class="cpt-item">
+            <view class="cpt-img-50">
+              <image src='/image/g{{idx+1}}.png'></image>
+            </view>
+            <view class="cpt-content">
+              <view class="cpt-head">
+                <label class="cpt-space">{{item.CNME}}</label>
+                <label class="cpt-space2">{{item.CDATA}}</label>
+              </view>
             </view>
           </view>
-        </view>
         </view>
       </navigator>
     </block>

@@ -6,7 +6,7 @@
         督办事项
       </view>
       <view class='more'>
-        <navigator openType="switchTab" url="/pages/works/worklist" hover-class="none">
+        <navigator url="/pages/works/allworks" hover-class="none">
           更多>>
         </navigator>
       </view>

@@ -51,7 +51,6 @@ swiper {
   color: #555;
   border-top: 1rpx solid #999;
   padding-top: 20rpx;
-  text-indent: 70rpx;
 }
 
 .ptext label {
@@ -73,7 +72,54 @@ swiper {
   text-align: center;
 }
 
-.pdata{
-  width: 100%;
+.preal-head{
+  font-weight: bold;
+  padding: 10rpx 0;
 }
 
+.pdata{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.pdata-item{
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+  border-top: 1rpx solid #eee;
+  padding: 20rpx 0;
+  color: #999;
+}
+
+.pdata-item .nme{
+  flex-grow: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+}
+
+.pdata-item .data{
+  flex-grow: 0;
+  padding-right: 20rpx;
+  margin: auto auto; 
+}
+
+.phist{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  align-items: flex-start;
+}
+
+.phist label{
+  text-indent: 0;
+}
+
+.canvas {
+    width: 100%;
+    height: 200px;
+}

@@ -24,15 +24,54 @@
       </view>
     </picker>
     <view class="preal">
-      <label>实时监测数据</label>
-      <view class="pdata" >
-        <view>DO溶解氧</view>
-        <view>CODmn</view>
-        <view>NH3-H</view>
-        <view>TP</view>
-        <view>ORP</view>
-        <view>Transp</view>
+      <label class="preal-head">实时监测数据</label>
+      <view class="pdata">
+        <view class='pdata-item'>
+          <view class='nme'>
+            <label>DO</label>
+            <label>溶解氧</label>
+          </view>
+          <view class='data'>{{DO}}</view>
+        </view>
+        <view class='pdata-item'>
+          <view class='nme'>
+            <label>CODmn</label>
+            <label>高锰酸钾指数</label>
+          </view>
+          <view class='data'>{{CODmn}}</view>
+        </view>
+        <view class='pdata-item'>
+          <view class='nme'>
+            <label>NH3-H</label>
+            <label>氨氮</label>
+          </view>
+          <view class='data'>{{NH3}}</view>
+        </view>
+        <view class='pdata-item'>
+          <view class='nme'>
+            <label>TP</label>
+            <label>总磷</label>
+          </view>
+          <view class='data'>{{Tp}}</view>
+        </view>
+        <view class='pdata-item'>
+          <view class='nme'>
+            <label>ORP</label>
+            <label>氧化还原电位</label>
+          </view>
+          <view class='data'>{{ORP}}</view>
+        </view>
+        <view class='pdata-item'>
+          <view class='nme'>
+            <label>Transp</label>
+            <label>透明度</label>
+          </view>
+          <view class='data'>{{Transp}}</view>
+        </view>
       </view>
+    </view>
+    <view class="phist">
+      <canvas canvas-id="wxChartCanvas" class="canvas"></canvas>
     </view>
   </view>
   <view wx:if="{{status == '1'}}" class="pvideo">

@@ -234,6 +234,15 @@ function _newUserId(url, user, openData, doAfter) {
   });
 }
 
+
+function _compare(property) {
+  return function (a, b) {
+    var value1 = a[property];
+    var value2 = b[property];
+    return value1 - value2;
+  }
+}
+
 module.exports = {
   formatTime: formatTime,
   formatTimeString: formatTimeString,
@@ -241,5 +250,6 @@ module.exports = {
   imageUtil: imageUtil,
   Post: Post,
   jsonRow: jsonRow,
-  getOpenId: _getOpenId
+  getOpenId: _getOpenId,
+  compare: _compare
 }

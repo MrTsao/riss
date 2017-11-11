@@ -1,4 +1,4 @@
-/* pages/works/works.wxss */
+/* pages/feedback/feedbackinfo.wxss */
 @import "../../common/lib/weui.wxss";
 
 

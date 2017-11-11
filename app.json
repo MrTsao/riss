@@ -9,7 +9,11 @@
     "pages/feedback/feedbacklist",
     "pages/works/work",
     "pages/works/worklist",
-    "pages/riverinfo/allriver"
+    "pages/riverinfo/allriver",
+    "pages/riverinfo/riverrank",
+    "pages/works/allworks",
+    "pages/feedback/feedbackinfo",
+    "pages/feedback/allfeedback"
   ],
   "window": {
     "backgroundTextStyle": "dark",

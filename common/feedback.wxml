@@ -6,14 +6,13 @@
         投诉处理
       </view>
       <view class='more'>
-        <navigator openType="switchTab" url="/pages/feedback/feedbacklist" hover-class="none">
+        <navigator url="/pages/feedback/allfeedback" hover-class="none">
           更多>>
         </navigator>
       </view>
     </view>
     <block wx:for="{{feedbacks}}" wx:for-index="idx" wx:key="{{item.CPID}}">
-      <navigator url="/pages/feedback/feedback?id={{item.CPID}}&txt={{item.CNME}}">
-      
+      <navigator url="/pages/feedback/feedbackinfo?id={{item.CPID}}&txt={{item.CNME}}">
       <view class="page-content">
         <view class="cpt-item">
           <view class="cpt-img">

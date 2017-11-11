@@ -1,17 +1,8 @@
-/* pages/feedback/feedback.wxss */
+/* pages/feedback/allfeedback.wxss */
+/* pages/feedback/feedbacklist.wxss */
 
-@import "../../common/lib/weui.wxss";
+@import "../../common/lib/news.wxss";
 
-label {
-  display: inline-block;
-  min-width: 130rpx;
-  margin-top: 0rpx;
-  margin-right: 20rpx;
-}
-
-form {
-  width: 100%;
-}
 
 .create {
   position: fixed;

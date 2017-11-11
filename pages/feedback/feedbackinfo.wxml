@@ -1,3 +1,4 @@
+<!--pages/feedback/feedbackinfo.wxml-->
 <VIEW>
   <swiper autoplay="{{false}}" indicator-dots="{{false}}" circular="{{false}}" class="swiper">
     <swiper-item>
@@ -11,7 +12,7 @@
 <view class="page-section">
   <view class="weui-cell weui-cell_input">
     <view class="weui-cell__hd">
-      <view class="weui-label">事项内容</view>
+      <view class="weui-label">投拆内容</view>
     </view>
   </view>
   <view class="weui-cell weui-cell_input ref-content">
@@ -21,7 +22,7 @@
 <view class="page-section">
   <view class="weui-cell weui-cell_input">
     <view class="weui-cell__hd">
-      <view class="weui-label">处理详情</view>
+      <view class="weui-label">处理状态</view>
     </view>
   </view>
   <view class="weui-cell weui-cell_input ref-content">

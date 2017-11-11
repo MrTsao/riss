@@ -4,17 +4,14 @@
 		"urlCheck": true,
 		"es6": true,
 		"postcss": true,
-		"minified": true
+		"minified": true,
+		"newFeature": true
 	},
-	"compileType": "weapp",
+	"compileType": "miniprogram",
 	"libVersion": "1.6.0",
 	"appid": "wx8c6ab73f4b17eb72",
 	"projectname": "Riss",
 	"condition": {
-		"weapp": {
-			"current": -1,
-			"list": []
-		},
 		"search": {
 			"current": -1,
 			"list": []
@@ -22,6 +19,29 @@
 		"conversation": {
 			"current": -1,
 			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": -1,
+					"name": "riverlist",
+					"pathName": "pages/riverinfo/riverlist",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "riverrank",
+					"pathName": "pages/riverinfo/riverrank",
+					"query": "pages/riverinfo/riverinfo"
+				},
+				{
+					"id": 2,
+					"name": "worklist",
+					"pathName": "pages/feedback/feedbacklist",
+					"query": ""
+				}
+			]
 		}
 	}
 }
