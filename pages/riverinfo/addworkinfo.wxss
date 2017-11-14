@@ -1,0 +1,82 @@
+/* pages/riverinfo/addworkinfo.wxss */
+/* pages/feedback/feedback.wxss */
+
+@import "../../common/lib/weui.wxss";
+
+label {
+  display: inline-block;
+  min-width: 130rpx;
+  margin-top: 0rpx;
+  margin-right: 20rpx;
+}
+
+form {
+  width: 100%;
+}
+
+.create {
+  position: fixed;
+  bottom: 20rpx;
+  right: 20rpx;
+  background-color: #DAA520;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 10rpx #DAA520;
+}
+.act-create {
+  box-shadow: 0 0 10rpx #555;
+}
+
+.cmts_content {
+  font-size: 28rpx;
+  height: 430rpx;
+  width: 100%;
+  padding: 5rpx 5rpx;
+  border-left: none;
+  border-right: none;
+}
+.create image {
+  width: 110rpx;
+  height: 110rpx;
+}
+.custBtn{
+  border: none;
+  background-color:inherit;
+  border-radius: 100%;
+  line-height: normal;
+  padding: 0;
+  height: 110rpx;
+  width: 110rpx;
+}
+.custBtn::after{
+  content: none;
+}
+
+.addcamer{
+  position: fixed;
+  top: 0rpx;
+  left: 0rpx;
+  background-color: #DAA520;
+  border-radius: 10rpx;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 10rpx #DAA520;
+}
+
+.img-list{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+}
+
+.img-list image{
+  width: 30%;
+  height: 200rpx;
+  border:1rpx dashed #aaa;
+  border-radius: 10rpx;
+}

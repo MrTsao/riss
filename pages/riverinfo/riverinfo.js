@@ -21,9 +21,29 @@ Page({
     CODmn: 0,
     NH3: 0,
     Tp: 0,
-    Transp: 0
+    Transp: 0,
+    src: null
   },
-
+  takePhoto: function () {
+    var that = this
+    const ctx = wx.createCameraContext()
+    ctx.takePhoto({
+      quality: 'high',
+      success: function (res) {
+        that.setData({
+          src: res.tempImagePath
+        })
+      }
+    })
+  },
+  error(e) {
+    console.log(e.detail)
+  },
+  createfeedback:function(e){
+    wx.navigateTo({
+      url: '/pages/riverinfo/addworkinfo',
+    })
+  },
   onLoad: function (options) {
     //调用应用实例的方法获取全局数据
     var that = this

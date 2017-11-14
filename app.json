@@ -13,7 +13,8 @@
     "pages/riverinfo/riverrank",
     "pages/works/allworks",
     "pages/feedback/feedbackinfo",
-    "pages/feedback/allfeedback"
+    "pages/feedback/allfeedback",
+    "pages/riverinfo/addworkinfo"
   ],
   "window": {
     "backgroundTextStyle": "dark",

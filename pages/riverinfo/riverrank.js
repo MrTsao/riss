@@ -33,9 +33,9 @@ Page({
         data.data[i].Transp = ((Math.round(10 * Math.random()) + 57) * 100) / 100
         if (data.data[i].riverNo == "HD0004") {
           data.data[i].rate = 1
-        } else if (data.data[i].riverNo == "HD0009") {
+        } else if (data.data[i].riverNo == "HD0003") {
           data.data[i].rate = 2
-        } else if (data.data[i].riverNo == "HD0010") {
+        } else if (data.data[i].riverNo == "HD0002") {
           data.data[i].rate = 3
         } else {
           data.data[i].rate = data.data[i].DO * 0.4 + data.data[i].ORP * 0.9 + data.data[i].CODmn * 0.3 + data.data[i].NH3 * 0.9 + data.data[i].Tp * 0.2 + data.data[i].Transp * 0.7

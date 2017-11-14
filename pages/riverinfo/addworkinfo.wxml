@@ -1,0 +1,42 @@
+<!--pages/riverinfo/addworkinfo.wxml-->
+<form catchsubmit="formSubmit">
+  <view class="page-section">
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">巡河内容</view>
+        </view>
+        <view class="weui-cell__bd">
+          <view class="weui-input">
+          </view>
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_input">
+        <textarea placeholder="请输入巡河内容.最大300字符.." auto-focus maxlength="1000" name="TERM_CONTENT" value="{{TERM_CONTENT}}" class="cmts_content" />
+      </view>
+    </view>
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+          <view class="weui-label">巡河图片</view>
+        </view>
+        <view class="weui-cell__bd">
+          <view class="weui-input">
+          </view>
+        </view>
+    </view>
+    <view class="img-list">
+      <image mode="widthFix" data-src="1" bindtap="take" src="{{src1}}"></image>
+      <image mode="widthFix" data-src="2" bindtap="take" src="{{src2}}"></image>
+      <image mode="widthFix" data-src="3" bindtap="take" src="{{src3}}"></image>
+    </view>
+  </view>
+  <view class="addcamer" wx:if="{{addcamer}}">
+    <camera device-position="back " flash="off " binderror="error " style="width: 100%; height: 300px; "></camera>
+    <button type="primary " bindtap="takePhoto ">添加</button>
+  </view>
+  <view class="create" hover-class="act-create ">
+    <button formType="submit " class="custBtn " disabled='{{btnable}}'>
+      <image src="/image/{{btnable? 'right': 'checked'}}.png "></image>
+    </button>
+  </view>
+</form>

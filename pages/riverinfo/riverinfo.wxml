@@ -81,7 +81,25 @@
     {{rivers[idx].chiefDuty}}
   </view>
   <view wx:if="{{status == '3'}}" class="ptext">
-    巡视
+    <view class="cpt-item">
+      <view class="cpt-content">
+        <view class="cpt-head">
+          <text class="cpt-space">2017年10月28日巡河记录</text>
+        </view>
+      </view>
+    </view>
+    <view class="cpt-item">
+      <view class="cpt-content">
+        <view class="cpt-head">
+          <text class="cpt-space">2017年11月2日巡河记录</text>
+        </view>
+      </view>
+    </view>
+    <view class="create" hover-class="act-create">
+      <button class="custBtn" bindtap='createfeedback'>
+        <image src="/image/plus.png"></image>
+      </button>
+    </view>
   </view>
   <view wx:if="{{status == '4'}}" class="ptext">
     投诉信息

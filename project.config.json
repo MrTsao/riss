@@ -21,7 +21,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 3,
 			"list": [
 				{
 					"id": -1,
@@ -39,6 +39,12 @@
 					"id": 2,
 					"name": "worklist",
 					"pathName": "pages/feedback/feedbacklist",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "add",
+					"pathName": "pages/riverinfo/addworkinfo",
 					"query": ""
 				}
 			]

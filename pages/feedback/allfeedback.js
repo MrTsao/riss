@@ -6,7 +6,7 @@ Page({
    */
   data: {
 
-    feedbacks: [{ CPID: '001', CNME: '长江武汉段大量漂浮物未清理' }, { CPID: '003', CNME: '府环河水质变差' }],
+    feedbacks: [{ CPID: '001', CNME: '小杨河大量漂浮物未清理' }, { CPID: '003', CNME: '鲁班河水质变差' }],
     COLOR: ['#6699cc', '#778899', '#99cc66', '#5F9EA0', '#8FBC8F', '#BDB76B']
   },
 

@@ -1,74 +1,87 @@
-// pages/feedback/feedbacklist.js
+// pages/riverinfo/addworkinfo.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
-    feedbacks: [{ CPID: '001', CNME: '小杨河大量漂浮物未清理' }, { CPID: '003', CNME: '鲁班河水质变差' }],
-    COLOR: ['#6699cc', '#778899', '#99cc66', '#5F9EA0', '#8FBC8F', '#BDB76B']
+    src1: '/image/plus2.png',
+    src2: '/image/plus2.png',
+    src3: '/image/plus2.png',
+    addcamer: false
+  },
+  takePhoto: function () {
+    var that = this
+    const ctx = wx.createCameraContext()
+    ctx.takePhoto({
+      quality: 'high',
+      success: function (res) {
+        that.setData({
+          src: res.tempImagePath
+        })
+      }
+    })
+  },
+  error(e) {
+    console.log(e.detail)
+  },
+  take: function (e) {
+    console.log(e);
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+
   },
-  createfeedback:function(e){
-    wx.navigateTo({
-      url: '/pages/feedback/feedback',
-    })
-  }
-  ,
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-  
+
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-    wx.stopPullDownRefresh();
+
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-  
+
   },
 
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-  
+
   }
 })

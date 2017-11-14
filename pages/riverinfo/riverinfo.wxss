@@ -1,5 +1,39 @@
 /* pages/riverinfo/riverinfo.wxss */
 
+@import "../../common/lib/news.wxss";
+
+
+.create {
+  position: fixed;
+  bottom: 20rpx;
+  right: 20rpx;
+  background-color: #DAA520;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 10rpx #DAA520;
+}
+.act-create {
+  box-shadow: 0 0 10rpx #555;
+}
+.create image {
+  width: 110rpx;
+  height: 110rpx;
+}
+.custBtn{
+  border: none;
+  background-color:inherit;
+  border-radius: 100%;
+  line-height: normal;
+  padding: 0;
+  height: 110rpx;
+  width: 110rpx;
+}
+.custBtn::after{
+  content: none;
+}
+
 swiper {
   height: 200rpx;
   width: 100%;
