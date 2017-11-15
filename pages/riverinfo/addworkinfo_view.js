@@ -5,41 +5,29 @@ Page({
    * 页面的初始数据
    */
   data: {
-    src: ['/image/plus2.png', '/image/plus2.png', '/image/plus2.png'],
-    addcamer: false,
+    content: [{ id: '001', nme: '2017年10月28日巡河记录', txt: '无特别情况！', img: ['/image/rivers/HD0001.jpg', '/image/rivers/HD0002.jpg', '/image/rivers/HD0003.jpg'] }, { id: '002', nme: '2017年11月2日巡河记录', txt: '无特别情况！', img: ['/image/rivers/HD0001.jpg', '/image/rivers/HD0002.jpg', '/image/rivers/HD0003.jpg'] }],
     idx: -1
-  },
-  takePhoto: function () {
-    var that = this
-    let oSrc = that.data.src
-    let idx = that.data.idx
-    const ctx = wx.createCameraContext()
-    ctx.takePhoto({
-      quality: 'high',
-      success: function (res) {
-        oSrc[idx] = res.tempImagePath
-        that.setData({
-          src: oSrc,
-          addcamer: !that.data.addcamer
-        })
-      }
-    })
-  },
-  error(e) {
-    console.log(e.detail)
-  },
-  take: function (e) {
-    this.setData({
-      idx: e.currentTarget.dataset.src,
-      addcamer: !this.data.addcamer
-    })
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+      wx.setNavigationBarTitle({
+        title: options.txt,
+      })
 
+      let content = this.data.content
+      let idx = this.data.idx
+      for (var i = 0; i < content.length;i++){
+        if (content[i].id == options.id){
+          idx = i;
+        }
+      }
+
+      this.setData({
+        idx: idx
+      })
   },
 
   /**

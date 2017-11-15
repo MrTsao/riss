@@ -2,7 +2,6 @@
 
 @import "../../common/lib/news.wxss";
 
-
 .create {
   position: fixed;
   bottom: 20rpx;

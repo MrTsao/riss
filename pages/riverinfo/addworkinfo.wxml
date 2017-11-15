@@ -17,22 +17,24 @@
     </view>
     <view class="weui-cell weui-cell_input">
       <view class="weui-cell__hd">
-          <view class="weui-label">巡河图片</view>
+        <view class="weui-label">巡河图片</view>
+      </view>
+      <view class="weui-cell__bd">
+        <view class="weui-input">
         </view>
-        <view class="weui-cell__bd">
-          <view class="weui-input">
-          </view>
-        </view>
+      </view>
     </view>
     <view class="img-list">
-      <image mode="widthFix" data-src="1" bindtap="take" src="{{src1}}"></image>
-      <image mode="widthFix" data-src="2" bindtap="take" src="{{src2}}"></image>
-      <image mode="widthFix" data-src="3" bindtap="take" src="{{src3}}"></image>
+      <image mode="widthFix" data-src="0" bindtap="take" src="{{src[0]}}"></image>
+      <image mode="widthFix" data-src="1" bindtap="take" src="{{src[1]}}"></image>
+      <image mode="widthFix" data-src="2" bindtap="take" src="{{src[2]}}"></image>
     </view>
   </view>
-  <view class="addcamer" wx:if="{{addcamer}}">
-    <camera device-position="back " flash="off " binderror="error " style="width: 100%; height: 300px; "></camera>
-    <button type="primary " bindtap="takePhoto ">添加</button>
+  <view class="module-bg-layer" wx:if="{{addcamer}}">
+    <view class="dv-module">
+      <camera device-position="back" flash="off" binderror="error" style="width: 100%; height: 300px;"></camera>
+      <button bindtap="takePhoto">拍 照</button>
+    </view>
   </view>
   <view class="create" hover-class="act-create ">
     <button formType="submit " class="custBtn " disabled='{{btnable}}'>

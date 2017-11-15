@@ -5,7 +5,7 @@
       <view class="swiper-shadow">
       </view>
       <label class="swiper-text">{{workitems[idx].CNME}}</label>
-      <image src="/image/gs/0{{workitems[idx].CPID}}.jpg" class="swiper-item" mode="aspectFill" />
+      <image src="{{workitems[idx].img}}" class="swiper-item" mode="aspectFill" />
     </swiper-item>
   </swiper>
 </VIEW>

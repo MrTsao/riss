@@ -81,20 +81,24 @@
     {{rivers[idx].chiefDuty}}
   </view>
   <view wx:if="{{status == '3'}}" class="ptext">
-    <view class="cpt-item">
-      <view class="cpt-content">
-        <view class="cpt-head">
-          <text class="cpt-space">2017年10月28日巡河记录</text>
+    <navigator url="/pages/riverinfo/addworkinfo_view?id=001&txt=2017年10月28日巡河记录">
+      <view class="cpt-item">
+        <view class="cpt-content">
+          <view class="cpt-head">
+            <text class="cpt-space">2017年10月28日巡河记录</text>
+          </view>
         </view>
       </view>
-    </view>
-    <view class="cpt-item">
-      <view class="cpt-content">
-        <view class="cpt-head">
-          <text class="cpt-space">2017年11月2日巡河记录</text>
+    </navigator>
+    <navigator url="/pages/riverinfo/addworkinfo_view?id=002&txt=2017年11月2日巡河记录">
+      <view class="cpt-item">
+        <view class="cpt-content">
+          <view class="cpt-head">
+            <text class="cpt-space">2017年11月2日巡河记录</text>
+          </view>
         </view>
       </view>
-    </view>
+    </navigator>
     <view class="create" hover-class="act-create">
       <button class="custBtn" bindtap='createfeedback'>
         <image src="/image/plus.png"></image>
@@ -102,6 +106,23 @@
     </view>
   </view>
   <view wx:if="{{status == '4'}}" class="ptext">
-    投诉信息
+    <navigator url="/pages/feedback/feedbackinfo?id=004&txt=严重工业污染">
+      <view class="cpt-item">
+        <view class="cpt-content">
+          <view class="cpt-head">
+            <text class="cpt-space">严重工业污染</text>
+          </view>
+        </view>
+      </view>
+    </navigator>
+    <navigator url="/pages/feedback/feedbackinfo?id=005&txt=河水变黑">
+      <view class="cpt-item">
+        <view class="cpt-content">
+          <view class="cpt-head">
+            <text class="cpt-space">河水变黑</text>
+          </view>
+        </view>
+      </view>
+    </navigator>
   </view>
 </view>

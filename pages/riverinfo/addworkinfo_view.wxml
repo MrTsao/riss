@@ -1,0 +1,35 @@
+<!--pages/riverinfo/addworkinfo_view.wxml-->
+<!--pages/riverinfo/addworkinfo.wxml-->
+<form catchsubmit="formSubmit">
+  <view class="page-section">
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">巡河内容</view>
+        </view>
+        <view class="weui-cell__bd">
+          <view class="weui-input">
+          </view>
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_input">
+        <label class="cmts_content">{{content[idx].txt}}
+        </label>
+      </view>
+    </view>
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">巡河图片</view>
+      </view>
+      <view class="weui-cell__bd">
+        <view class="weui-input">
+        </view>
+      </view>
+    </view>
+    <view class="img-list">
+      <image mode="widthFix" data-src="0" bindtap="take" src="{{content[idx].img[0]}}"></image>
+      <image mode="widthFix" data-src="1" bindtap="take" src="{{content[idx].img[1]}}"></image>
+      <image mode="widthFix" data-src="2" bindtap="take" src="{{content[idx].img[2]}}"></image>
+    </view>
+  </view>
+</form>
