@@ -15,7 +15,8 @@
     "pages/feedback/feedbackinfo",
     "pages/feedback/allfeedback",
     "pages/riverinfo/addworkinfo",
-    "pages/riverinfo/addworkinfo_view"
+    "pages/riverinfo/addworkinfo_view",
+    "pages/vote/vote"
   ],
   "window": {
     "backgroundTextStyle": "dark",
@@ -48,10 +49,10 @@
         "text": "督办事项"
       },
       {
-        "pagePath": "pages/feedback/feedbacklist",
+        "pagePath": "pages/vote/vote",
         "iconPath": "image/feedback.png",
         "selectedIconPath": "image/feedback2.png",
-        "text": "投诉处理"
+        "text": "互动"
       }
     ]
   }

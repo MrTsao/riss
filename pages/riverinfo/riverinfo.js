@@ -9,6 +9,7 @@ Page({
   data: {
     PAGE: "RIVER_LIST",
     rivers: [],
+    scrollH: 0,
     id: '',
     nme: '',
     idx: 0,
@@ -39,7 +40,7 @@ Page({
   error(e) {
     console.log(e.detail)
   },
-  createfeedback:function(e){
+  createfeedback: function (e) {
     wx.navigateTo({
       url: '/pages/riverinfo/addworkinfo',
     })
@@ -47,6 +48,11 @@ Page({
   onLoad: function (options) {
     //调用应用实例的方法获取全局数据
     var that = this
+    var SysInfo = wx.getSystemInfoSync()
+    let rate = (SysInfo.screenWidth / 750)
+    that.setData({
+      scrollH: (1 / rate) * SysInfo.windowHeight-20,
+    })
     var stitle = options.nme || ""
     wx.setNavigationBarTitle({
       title: stitle,

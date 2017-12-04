@@ -1,35 +1,133 @@
 /* pages/riverinfo/riverinfo.wxss */
-
 @import "../../common/lib/news.wxss";
+
+.container {
+  display: flex;
+  flex-direction: row;
+  background-color: #eee;
+  padding: 10rpx 0;
+}
+
+.dleft, .dright {
+  flex-grow: 0;
+  color: #aaa;
+  font-size: 42rpx;
+}
+
+.dcenter {
+  width: 100%;
+  flex-grow: 1;
+  border-radius: 8rpx;
+}
+.page-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #eee;
+  padding: 20rpx 0;
+}
+.main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+.scroll{
+  background: #fff;
+  border-radius: 10rpx;
+  border: 1rpx solid #eee;
+  box-shadow: 0rpx 1rpx 20rpx 0rpx #556B2F;
+  width: 98%;
+  overflow: hidden;
+}
+
+.river-name {
+  position: absolute;
+  top: 335rpx;
+  font-weight: bold;
+  color: #556B2F;
+  background-color: #eee;
+  width: 98%;
+  opacity: 0.6;
+  padding: 10rpx 20rpx;
+}
+
+.detail-head {
+  height: 60rpx;
+  border-top-left-radius: 10rpx;
+  border-top-right-radius: 10rpx;  
+  font-size: 32rpx;
+  color: #fff;
+  background: #556B2F;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.river-img {
+  background-color: #fff;
+  overflow: hidden;
+  border-radius: 10rpx;
+  border:1rpx solid #eee;
+}
+
+.river-img image {
+  width: 100%;
+  height: 400rpx;
+}
+
+.river-content-head {
+  display: block;
+  font-weight: bold;
+  font-size: 32rpx;
+  border-top: 1rpx dashed #eee;
+  padding: 10rpx 20rpx;
+  color: #556B2F;
+}
+
+.river-content-txt {
+  display: block;
+  padding-left: 50rpx;
+  font-size: 30rpx;
+  padding-bottom: 10rpx;
+  color: #666;
+}
 
 .create {
   position: fixed;
   bottom: 20rpx;
   right: 20rpx;
-  background-color: #DAA520;
+  background-color: #daa520;
   border-radius: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 0 10rpx #DAA520;
+  box-shadow: 0 0 10rpx #daa520;
 }
+
 .act-create {
   box-shadow: 0 0 10rpx #555;
 }
+
 .create image {
   width: 110rpx;
   height: 110rpx;
 }
-.custBtn{
+
+.custBtn {
   border: none;
-  background-color:inherit;
+  background-color: inherit;
   border-radius: 100%;
   line-height: normal;
   padding: 0;
   height: 110rpx;
   width: 110rpx;
 }
-.custBtn::after{
+
+.custBtn::after {
   content: none;
 }
 
@@ -37,11 +135,6 @@ swiper {
   height: 200rpx;
   width: 100%;
   letter-spacing: 5rpx;
-}
-
-.swiper-item {
-  height: 200rpx;
-  width: 100%;
 }
 
 .funlist {
@@ -105,19 +198,19 @@ swiper {
   text-align: center;
 }
 
-.preal-head{
+.preal-head {
   font-weight: bold;
   padding: 10rpx 0;
 }
 
-.pdata{
+.pdata {
   width: 100%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
 
-.pdata-item{
+.pdata-item {
   display: flex;
   flex-direction: row;
   width: 50%;
@@ -126,7 +219,7 @@ swiper {
   color: #999;
 }
 
-.pdata-item .nme{
+.pdata-item .nme {
   flex-grow: 2;
   display: flex;
   flex-direction: column;
@@ -134,13 +227,13 @@ swiper {
   align-content: center;
 }
 
-.pdata-item .data{
+.pdata-item .data {
   flex-grow: 0;
   padding-right: 20rpx;
-  margin: auto auto; 
+  margin: auto auto;
 }
 
-.phist{
+.phist {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -148,11 +241,12 @@ swiper {
   align-items: flex-start;
 }
 
-.phist label{
+.phist label {
   text-indent: 0;
 }
 
 .canvas {
-    width: 100%;
-    height: 200px;
+  width: 100%;
+  height: 200px;
+  z-index: 99;
 }
