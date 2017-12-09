@@ -1,6 +1,22 @@
 <!--pages/feedback/feedback.wxml-->
 
 <form catchsubmit="formSubmit">
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">有图有真相</view>
+      </view>
+      <view class="weui-cell__bd">
+        <view class="weui-input">
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="img-list">
+    <image mode="widthFix" data-src="0" bindtap="take" src="{{src[0]}}"></image>
+    <image mode="widthFix" data-src="1" bindtap="take" src="{{src[1]}}"></image>
+    <image mode="widthFix" data-src="2" bindtap="take" src="{{src[2]}}"></image>
+  </view>
   <view class="page-section">
     <view class="weui-cells weui-cells_after-title">
       <view class="weui-cell weui-cell_input">
@@ -13,9 +29,16 @@
           </view>
         </view>
       </view>
-      <view class="weui-cell weui-cell_input">
-        <textarea placeholder="请输入投诉内容.最大300字符.." auto-focus maxlength="1000" name="TERM_CONTENT" value="{{TERM_CONTENT}}" class="cmts_content" />
+      <view wx:if="{{!addcamer}}" class="weui-cell weui-cell_input">
+        <textarea placeholder="请输入投诉内容.最大300字符.." maxlength="1000" name="TERM_CONTENT" value="{{TERM_CONTENT}}" class="cmts_content" />
       </view>
+    </view>
+  </view>
+  
+  <view class="module-bg-layer" wx:if="{{addcamer}}">
+    <view class="dv-module">
+      <camera device-position="back" flash="off" binderror="error" style="width: 100%; height: 300px;"></camera>
+      <button bindtap="takePhoto">拍 照</button>
     </view>
   </view>
   <view class="create" hover-class="act-create">

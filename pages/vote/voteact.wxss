@@ -1,0 +1,22 @@
+/* pages/vote/voteact.wxss */
+@import "../../common/lib/news.wxss";
+
+
+swiper {
+  height: 200rpx;
+  width: 100%;
+  letter-spacing: 5rpx;
+}
+
+.swiper-item {
+  height: 200rpx;
+  width: 100%;
+}
+
+.imgcontent{
+  padding-right: 30rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}

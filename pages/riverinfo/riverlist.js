@@ -25,14 +25,14 @@ Page({
     var that = this
     util.Post(this, "LOAD", null, function (that, data) {
       that.setData({
-        rivers: data.data
+        rivers: data.rows
       })
     });
   },
   onPullDownRefresh() {
     util.Post(this, "LOAD", null, function (that, data) {
       that.setData({
-        rivers: data.data
+        rivers: data.rows
       })
     });
     wx.stopPullDownRefresh()

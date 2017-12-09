@@ -42,13 +42,13 @@
             <block wx:for="{{rivers}}" wx:key="{{code}}">
               <!-- <navigator url="/pages/riverinfo/riverinfo?id={{item.riverNo}}&nme={{item.riverName}}"> -->
                 <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
-                  <view class="td">{{index+1}}</view>
+                  <view class="td">{{item.no+1}}</view>
                   <view class="td">{{item.DO}}</view>
                   <view class="td">{{item.ORP}}</view>
                   <view class="td">{{item.CODmn}}</view>
                 </view>
                 <view class="tr" wx:else>
-                  <view class="td">{{index+1}}</view>
+                  <view class="td">{{item.no+1}}</view>
                   <view class="td">{{item.DO}}</view>
                   <view class="td">{{item.ORP}}</view>
                   <view class="td">{{item.CODmn}}</view>

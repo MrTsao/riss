@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    workitems: [{ CPID: '001', CNME: '小杨河大量漂浮物已安排清理' }, { CPID: '003', CNME: '鲁班河水质变差情况说明' }],
+    workitems: [{ CPID: '001', CNME: '小杨河大量漂浮物已安排清理' }, { CPID: '003', CNME: '鲁班河水质变差情况说明' }], feedbacks: [{ CPID: '001', CNME: '小杨河大量漂浮物未清理' }, { CPID: '003', CNME: '鲁班河水质变差' }],
     COLOR: ['#6699cc', '#778899', '#99cc66', '#5F9EA0', '#8FBC8F', '#BDB76B']
   },
 
@@ -14,6 +14,11 @@ Page({
    */
   onLoad: function (options) {
   
+  },
+  createfeedback: function (e) {
+    wx.navigateTo({
+      url: '/pages/feedback/feedback',
+    })
   },
 
   /**

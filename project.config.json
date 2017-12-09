@@ -8,7 +8,7 @@
 		"newFeature": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "1.6.0",
+	"libVersion": "1.6.6",
 	"appid": "wx8c6ab73f4b17eb72",
 	"projectname": "Riss",
 	"condition": {
@@ -30,21 +30,21 @@
 					"query": ""
 				},
 				{
-					"id": -1,
-					"name": "riverrank",
-					"pathName": "pages/riverinfo/riverrank",
-					"query": "pages/riverinfo/riverinfo"
-				},
-				{
-					"id": 2,
+					"id": 1,
 					"name": "worklist",
-					"pathName": "pages/feedback/feedbacklist",
+					"pathName": "pages/works/worklist",
 					"query": ""
 				},
 				{
 					"id": -1,
 					"name": "add",
 					"pathName": "pages/riverinfo/addworkinfo",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "voteact",
+					"pathName": "pages/vote/voteact",
 					"query": ""
 				}
 			]

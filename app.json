@@ -16,7 +16,9 @@
     "pages/feedback/allfeedback",
     "pages/riverinfo/addworkinfo",
     "pages/riverinfo/addworkinfo_view",
-    "pages/vote/vote"
+    "pages/vote/vote",
+    "pages/profile/profile",
+    "pages/vote/voteact"
   ],
   "window": {
     "backgroundTextStyle": "dark",

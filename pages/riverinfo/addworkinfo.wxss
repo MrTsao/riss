@@ -1,6 +1,6 @@
 /* pages/riverinfo/addworkinfo.wxss */
-/* pages/feedback/feedback.wxss */
 
+/* pages/feedback/feedback.wxss */
 @import "../../common/lib/weui.wxss";
 
 label {
@@ -18,13 +18,14 @@ form {
   position: fixed;
   bottom: 20rpx;
   right: 20rpx;
-  background-color: #DAA520;
+  background-color: #daa520;
   border-radius: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 0 10rpx #DAA520;
+  box-shadow: 0 0 10rpx #daa520;
 }
+
 .act-create {
   box-shadow: 0 0 10rpx #555;
 }
@@ -36,35 +37,40 @@ form {
   padding: 5rpx 5rpx;
   border-left: none;
   border-right: none;
+  z-index: -1;
 }
+
 .create image {
   width: 110rpx;
   height: 110rpx;
 }
-.custBtn{
+
+.custBtn {
   border: none;
-  background-color:inherit;
+  background-color: inherit;
   border-radius: 100%;
   line-height: normal;
   padding: 0;
   height: 110rpx;
   width: 110rpx;
 }
-.custBtn::after{
+
+.custBtn::after {
   content: none;
 }
 
-.img-list{
+.img-list {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-around;
+  padding-bottom: 20rpx;
 }
 
-.img-list image{
+.img-list image {
   width: 30%;
   height: 200rpx;
-  border:1rpx dashed #aaa;
+  border: 1rpx dashed #aaa;
   border-radius: 10rpx;
 }
 
@@ -79,9 +85,10 @@ form {
   background: #e0e0e0;
   opacity: 1;
   overflow: hidden;
-  z-index: 1000;
+  z-index: 90000;
   margin: auto 0;
 }
+
 .dv-module {
   width: 97%;
   margin: 20rpx auto;
@@ -92,6 +99,6 @@ form {
   flex-direction: column;
 }
 
-.dv-module button{
+.dv-module button {
   width: 100%;
 }

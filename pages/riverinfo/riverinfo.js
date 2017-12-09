@@ -14,9 +14,11 @@ Page({
     nme: '',
     idx: 0,
     status: 0,
+    statustxt: ["基本信息", "河道水情", "实时视频", "一河一策", "河道巡视", "投诉信息"],
     array: ['水文段1', '水文段2', '水文段3', '水文段4'],
     index: 0,
     chart: null,
+    wvchart: null,
     DO: 0,
     ORP: 0,
     CODmn: 0,
@@ -51,22 +53,22 @@ Page({
     var SysInfo = wx.getSystemInfoSync()
     let rate = (SysInfo.screenWidth / 750)
     that.setData({
-      scrollH: (1 / rate) * SysInfo.windowHeight-20,
+      scrollH: (1 / rate) * SysInfo.windowHeight - 20,
     })
     var stitle = options.nme || ""
     wx.setNavigationBarTitle({
       title: stitle,
     })
     util.Post(this, "LOAD", null, function (that, data) {
-      let idx = -1
-      for (var i = 0; i < data.data.length; i++) {
-        if (data.data[i].riverNo == options.id) {
+      let idx = 0
+      for (var i = 0; i < data.rows.length; i++) {
+        if (data.rows[i].riverNo == options.id) {
           idx = i;
           break;
         }
       }
       that.setData({
-        rivers: data.data,
+        rivers: data.rows,
         id: options.id,
         nme: options.nme,
         idx: idx,
@@ -167,8 +169,49 @@ Page({
       height: 200
     });
 
+    let date = new Date();
+    console.log(date)
+    let wvchart = new Charts({
+      canvasId: 'wxWVCanvas',
+      type: 'area',
+      categories: [
+        new Date(date.valueOf() - 3 * 3600 * 1000).getHours().toString() + "点",
+        new Date(date.valueOf() - 2 * 3600 * 1000).getHours().toString() + "点", new Date(date.valueOf() - 1 * 3600 * 1000).getHours().toString() + "点", date.getHours().toString() + "点"],
+      series: [{
+        name: '警戒值',
+        color: '#ffffff',
+        data: [50
+          , 50
+          , 50
+          , 50],
+        format: function (val) {
+          return val.toFixed(2);
+        }
+      }, {
+        name: '水位',
+        color: '#7cb5ec',
+        data: [((Math.round(20 * Math.random()) + 10) * 100) / 100
+          , ((Math.round(20 * Math.random()) + 10) * 100) / 100
+          , ((Math.round(20 * Math.random()) + 10) * 100) / 100
+          , ((Math.round(20 * Math.random()) + 10) * 100) / 100],
+        format: function (val) {
+          return val.toFixed(2);
+        }
+      }],
+      yAxis: {
+        title: '实时水位',
+        format: function (val) {
+          return val.toFixed(2);
+        },
+        min: 0
+      },
+      width: windowWidth,
+      height: 200
+    });
+
     this.setData({
-      chart: chart
+      chart: chart,
+      wvchart: wvchart
     })
   },
   changestatus: function (e) {
@@ -177,6 +220,7 @@ Page({
     })
     if (e.target.dataset.status == "0") {
       this.data.chart.updateData()
+      this.data.wvchart.updateData()
     }
   }, bindPickerChange: function (e) {
     this.setData({
@@ -186,10 +230,38 @@ Page({
   onPullDownRefresh() {
     util.Post(this, "LOAD", null, function (that, data) {
       that.setData({
-        rivers: data.data
+        rivers: data.rows
       })
     });
     wx.stopPullDownRefresh()
+  },
+  dwnLogsFile: function (e) {
+    let that = this
+    const downloadTask = wx.downloadFile({
+      url: "https://www.yondo.cc/ris/UpLoad/logs/001.pdf",
+      success: function (res) {
+        // 只要服务器有响应数据，就会把响应内容写入文件并进入 success 回调，业务需要自行判断是否下载到了想要的内容
+        if (res.statusCode === 200) {
+          wx.openDocument(
+            {
+              filePath: res.tempFilePath,
+              fileType:"pdf",
+              success: function (res) {
+                wx.showToast({
+                  title: '成功',
+                  icon: 'success',
+                  duration: 2000
+                })
+              }
+            })
+        }
+      }
+    })
+    downloadTask.onProgressUpdate((res) => {
+      that.setData({
+        dcent: res.progress
+      })
+    })
   },
   onReachBottom: function (e) {
   },

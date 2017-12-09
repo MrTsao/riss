@@ -12,7 +12,7 @@
       </view>
     </view>
     <block wx:for="{{goodrivers}}" wx:for-index="idx" wx:key="{{item.CPID}}">
-      <navigator url="/pages/riverinfo/riverinfo?id={{item.CPID}}&nme={{item.CNME}}">
+      <navigator url="/pages/riverinfo/riverrank?id={{item.CPID}}">
         <view class="page-content">
           <view class="cpt-item">
             <view class="cpt-img-50">

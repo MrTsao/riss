@@ -16,7 +16,7 @@
           <navigator url="/pages/riverinfo/riverinfo?id={{item.riverNo}}&nme={{item.riverName}}" hover-class="none">
             <image src='https://www.yondo.cc/ris/images/10{{index%3}}.jpg'></image>
             <view class="river_content">
-              <label> {{item.riverName}}({{item.riverLength}})</label>
+              <label> {{item.riverName}}({{item.riverLength}}km)</label>
               <view>
                 {{item.startName}}~{{item.endName}}
               </view>
@@ -31,7 +31,7 @@
           <navigator url="/pages/riverinfo/riverinfo?id={{item.riverNo}}&nme={{item.riverName}}" hover-class="none">
             <image src='https://www.yondo.cc/ris/images/10{{index%3}}.jpg' mode="scaleToFill"></image>
             <view class="river_content">
-              <label> {{item.riverName}}({{item.riverLength}})</label>
+              <label> {{item.riverName}}({{item.riverLength}}km)</label>
               <view>
                 {{item.startName}}~{{item.endName}}
               </view>

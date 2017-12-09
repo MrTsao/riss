@@ -1,49 +1,30 @@
-// pages/feedback/feedback.js
+// pages/profile/profile.js
+var app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    src: ['/image/plus2.png', '/image/plus2.png', '/image/plus2.png'],
-    addcamer: false,
-    idx: -1
-  },
-  takePhoto: function () {
-    var that = this
-    let oSrc = that.data.src
-    let idx = that.data.idx
-    const ctx = wx.createCameraContext()
-    ctx.takePhoto({
-      quality: 'high',
-      success: function (res) {
-        oSrc[idx] = res.tempImagePath
-        that.setData({
-          src: oSrc,
-          addcamer: !that.data.addcamer
-        })
-      }
-    })
-  },
-  error(e) {
-    console.log(e.detail)
-  },
-  take: function (e) {
-    this.setData({
-      idx: e.currentTarget.dataset.src,
-      addcamer: !this.data.addcamer
-    })
+    userInfo: { avatarUrl: "/image/icon.png" },
+    MODE: "VIEW",
+    USER_CDE: "test",
+    USER_SEX: "male",
+    TEL: "13300990099",
+    E_MAIL: "test@gmail.com",
+    BTN_STATUS: true
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
-  },
-  formSubmit: function (e) {
-    wx.showToast({
-      title: '开发中',
+    var that = this
+    //调用应用实例的方法获取全局数据
+    app.getUserInfo(null, function (user) {
+      that.setData({
+        userInfo: user
+      })
     })
   },
 
@@ -79,8 +60,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
-    wx.stopPullDownRefresh();
+  
   },
 
   /**

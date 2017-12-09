@@ -1,1 +1,27 @@
 <!--pages/vote/vote.wxml-->
+<!--servicelist.wxml-->
+<import src="../../common/pagehead.wxml" />
+<view class="container">
+  <template is="pagehead" data="{{avatarUrl: userInfo.avatarUrl,nickName:userInfo.nickName,color:COLOR[week]}}" />
+  <view class="page-section page-section-gap">
+  </view>
+  <view class="page-section" wx:for="{{items}}" wx:key="item.id">
+    <navigator open-type="navigate" url="{{item.url}}" hover-class="none">
+      <view wx:if="{{item.spilted}}" class='splited' ></view>
+      <view class="item">
+        <view class="item-image" style="background-color:{{item.color}};">
+          <image src="{{item.img}}"></image>
+        </view>
+        <view class="{{item.spilted?'item-txt':'item-txt2'}}">
+          {{item.txt}}
+        </view>
+      </view>
+    </navigator>
+  </view>
+  <view class='splited' ></view>
+  <form catchsubmit="formSubmit">
+    <input style="display:none;" name="HEAD_IMG" type="text" value="{{HEAD_IMG}}" />
+    <view class="page-section">
+    </view>
+  </form>
+</view>

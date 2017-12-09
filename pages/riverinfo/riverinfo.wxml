@@ -1,169 +1,208 @@
 <!--pages/riverinfo/riverinfo.wxml-->
 <view class="container">
-  <view class="dleft">《</view>
-  <view class='dcenter'>
-    <swiper indicator-dots="{{false}}" autoplay="{{false}}" circular="{{false}}" style="height:{{scrollH}}rpx;">
-      <swiper-item class="main">
-        <scroll-view scroll-y="true" class="scroll" style="height:{{scrollH-70}}rpx;">
-          <view class="river-img">
-            <view class="river-head">
-              <image src="https://www.yondo.cc/ris/images/10{{idx%4}}.jpg" mode="center" />
-              <view class="river-name">{{rivers[idx].riverName}}</view>
-            </view>
-            <view>
-              <div class="river-content-head">基本信息</div>
-              <div class="river-content-txt">基本信息1基本信息1基本信息1基本信息1基本信息1基本信息1基本信息1基本信息1基本信息1基本信息1基本信息1基本信息1基本信息1基本信息1基本信息1基本信息1基本信息1基本信息1基本信息1基本信息1基本信息1基本信息1基本信息1基本信息1</div>
-            </view>
-            <view>
-              <div class="river-content-head">河道起止点</div>
-              <div class="river-content-txt">{{rivers[idx].startName}}-{{rivers[idx].endName}}</div>
-            </view>
-            <view>
-              <div class="river-content-head">河长</div>
-              <div class="river-content-txt">河长1/tel:</div>
-            </view>
-            <view>
-              <div class="river-content-head">巡视员</div>
-              <div class="river-content-txt">巡视员1/tel:</div>
-            </view>
-            <view>
-              <div class="river-content-head">河道警长</div>
-              <div class="river-content-txt">警长1/tel:</div>
-            </view>
-          </view>
-        </scroll-view>
-      </swiper-item>
-      <swiper-item class="main">
-        <scroll-view scroll-y="true" class="scroll" style="height:{{scrollH-70}}rpx;">
-          <view class="detail-head">
-            <div>{{rivers[idx].riverName}}</div>
-          </view>
-          <view class="funlist">
-            <label data-status='0' bindtap='changestatus' style="{{(status=='0'?'background-color:#eee;':'')}}">河道水情</label>
-            <label data-status='1' bindtap='changestatus' style="{{(status=='1'?'background-color:#eee;':'')}}">实时视频</label>
-            <label data-status='2' bindtap='changestatus' style="{{(status=='2'?'background-color:#eee;':'')}}">一河一策</label>
-            <label data-status='3' bindtap='changestatus' style="{{(status=='3'?'background-color:#eee;':'')}}">河道巡视</label>
-            <label data-status='4' bindtap='changestatus' style="{{(status=='4'?'background-color:#eee;':'')}}">投诉信息</label>
-          </view>
-          <view wx:if="{{status == '0'}}" class="ptext">
-            <view class="phead">
-              <label>{{rivers[idx].riverName}}</label>
-              <label>{{rivers[idx].levelName}}河道</label>
-            </view>
-            <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
-              <view class="phead">
-                <label>水文段</label>
-                <view class="picker">
-                  {{array[index]}}
-                </view>
-              </view>
-            </picker>
-            <view class="preal">
-              <label class="preal-head">实时监测数据</label>
-              <view class="pdata">
-                <view class='pdata-item'>
-                  <view class='nme'>
-                    <label>DO</label>
-                    <label>溶解氧</label>
-                  </view>
-                  <view class='data'>{{DO}}</view>
-                </view>
-                <view class='pdata-item'>
-                  <view class='nme'>
-                    <label>CODmn</label>
-                    <label>高锰酸钾指数</label>
-                  </view>
-                  <view class='data'>{{CODmn}}</view>
-                </view>
-                <view class='pdata-item'>
-                  <view class='nme'>
-                    <label>NH3-H</label>
-                    <label>氨氮</label>
-                  </view>
-                  <view class='data'>{{NH3}}</view>
-                </view>
-                <view class='pdata-item'>
-                  <view class='nme'>
-                    <label>TP</label>
-                    <label>总磷</label>
-                  </view>
-                  <view class='data'>{{Tp}}</view>
-                </view>
-                <view class='pdata-item'>
-                  <view class='nme'>
-                    <label>ORP</label>
-                    <label>氧化还原电位</label>
-                  </view>
-                  <view class='data'>{{ORP}}</view>
-                </view>
-                <view class='pdata-item'>
-                  <view class='nme'>
-                    <label>Transp</label>
-                    <label>透明度</label>
-                  </view>
-                  <view class='data'>{{Transp}}</view>
-                </view>
-              </view>
-            </view>
-            <view class="phist">
-              <canvas canvas-id="wxChartCanvas" class="canvas"></canvas>
-            </view>
-          </view>
-          <view wx:if="{{status == '1'}}" class="pvideo">
-            <video src="https://www.yondo.cc/ris/images/11861574-1.mp4" controls="{{false}}" autoplay="{{true}}" loop="{{true}}" objectFit="fill"></video>
-          </view>
-          <view wx:if="{{status == '2'}}" class="ptext">
-            {{rivers[idx].chiefDuty}}
-          </view>
-          <view wx:if="{{status == '3'}}" class="ptext">
-            <navigator url="/pages/riverinfo/addworkinfo_view?id=001&txt=2017年10月28日巡河记录">
-              <view class="cpt-item">
-                <view class="cpt-content">
-                  <view class="cpt-head">
-                    <text class="cpt-space">2017年10月28日巡河记录</text>
-                  </view>
-                </view>
-              </view>
-            </navigator>
-            <navigator url="/pages/riverinfo/addworkinfo_view?id=002&txt=2017年11月2日巡河记录">
-              <view class="cpt-item">
-                <view class="cpt-content">
-                  <view class="cpt-head">
-                    <text class="cpt-space">2017年11月2日巡河记录</text>
-                  </view>
-                </view>
-              </view>
-            </navigator>
-            <view class="create" hover-class="act-create">
-              <button class="custBtn" bindtap='createfeedback'>
-                <image src="/image/plus.png"></image>
-              </button>
-            </view>
-          </view>
-          <view wx:if="{{status == '4'}}" class="ptext">
-            <navigator url="/pages/feedback/feedbackinfo?id=004&txt=严重工业污染">
-              <view class="cpt-item">
-                <view class="cpt-content">
-                  <view class="cpt-head">
-                    <text class="cpt-space">严重工业污染</text>
-                  </view>
-                </view>
-              </view>
-            </navigator>
-            <navigator url="/pages/feedback/feedbackinfo?id=005&txt=河水变黑">
-              <view class="cpt-item">
-                <view class="cpt-content">
-                  <view class="cpt-head">
-                    <text class="cpt-space">河水变黑</text>
-                  </view>
-                </view>
-              </view>
-            </navigator>
-          </view>
-        </scroll-view>
-      </swiper-item>
-    </swiper>
+  <view class="river-img">
+    <view class="river-head">
+      <image src="https://www.yondo.cc/ris/images/10{{idx%4}}.jpg" mode="center" />
+      <view class="river-name">{{rivers[idx].riverName}}-{{statustxt[status]}}</view>
+    </view>
   </view>
-  <view class="dright">》</view>
-
+  <view class="funlist">
+    <label wx:if="{{status != '0'}}" data-status='0' bindtap='changestatus' style="{{(status=='0'?'background-color:#eee;':'')}}">基本信息</label>
+    <label wx:if="{{status != '1'}}" data-status='1' bindtap='changestatus' style="{{(status=='1'?'background-color:#eee;':'')}}">河道水情</label>
+    <label wx:if="{{status != '2'}}" data-status='2' bindtap='changestatus' style="{{(status=='2'?'background-color:#eee;':'')}}">实时视频</label>
+    <label wx:if="{{status != '3'}}" data-status='3' bindtap='changestatus' style="{{(status=='3'?'background-color:#eee;':'')}}">一河一策</label>
+    <label wx:if="{{status != '4'}}" data-status='4' bindtap='changestatus' style="{{(status=='4'?'background-color:#eee;':'')}}">河道巡视</label>
+    <label wx:if="{{status != '5'}}" data-status='5' bindtap='changestatus' style="{{(status=='5'?'background-color:#eee;':'')}}">投诉信息</label>
+  </view>
+  <view wx:if="{{status == '0'}}" class="ptext">
+    <view class="river-base">
+      <view class="base-content">
+        <div class="river-content-head">河道起点</div>
+        <div class="river-content-txt">{{rivers[idx].startName}}</div>
+      </view>
+      <view class="base-content">
+        <div class="river-content-head">河道终点</div>
+        <div class="river-content-txt">{{rivers[idx].endName}}</div>
+      </view>
+    </view>
+    <view class="river-base">
+      <view class="base-content">
+        <div class="river-content-head">河道总长(km)</div>
+        <div class="river-content-txt">{{rivers[idx].riverLength}}</div>
+      </view>
+      <view class="base-content">
+        <div class="river-content-head">现状河道宽度(m)</div>
+        <div class="river-content-txt">{{rivers[idx].riverWidth}}</div>
+      </view>
+    </view>
+    <view class="river-base">
+      <view class="base-content">
+        <div class="river-content-head">河 长</div>
+        <div class="river-content-txt">{{rivers[idx].handler}}</div>
+      </view>
+      <view class="base-content">
+        <div class="river-content-head">联系电话</div>
+        <div class="river-content-txt">{{rivers[idx].handlertel}}</div>
+      </view>
+    </view>
+    <view class="river-base">
+      <view class="base-content">
+        <div class="river-content-head">巡视员</div>
+        <div class="river-content-txt">{{rivers[idx].patroler}}</div>
+      </view>
+      <view class="base-content">
+        <div class="river-content-head">联系电话</div>
+        <div class="river-content-txt">{{rivers[idx].patrolertel}}</div>
+      </view>
+    </view>
+    <view class="river-base">
+      <view class="base-content">
+        <div class="river-content-head">河道警长</div>
+        <div class="river-content-txt">{{rivers[idx].police}}</div>
+      </view>
+      <view class="base-content">
+        <div class="river-content-head">联系电话</div>
+        <div class="river-content-txt">{{rivers[idx].policetel}}</div>
+      </view>
+    </view>
+    <view class="river-base">
+      <view class="base-content">
+        <div class="river-content-head">保洁员</div>
+        <div class="river-content-txt">{{rivers[idx].clearer}}</div>
+      </view>
+      <view class="base-content">
+        <div class="river-content-head">联系电话</div>
+        <div class="river-content-txt">{{rivers[idx].clearertel}}</div>
+      </view>
+    </view>
+  </view>
+  <view wx:if="{{status == '1'}}" class="ptext">
+    <view class="phead">
+      <label>{{rivers[idx].riverName}}</label>
+      <label>{{rivers[idx].levelName}}河道</label>
+    </view>
+    <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+      <view class="phead">
+        <label>水文段</label>
+        <view class="picker">
+          {{array[index]}}
+        </view>
+      </view>
+    </picker>
+    <view class="preal">
+      <label class="preal-head">实时监测数据</label>
+      <view class="pdata">
+        <view class='pdata-item'>
+          <view class='nme'>
+            <label>DO</label>
+            <label>溶解氧</label>
+          </view>
+          <view class='data'>{{DO}}</view>
+        </view>
+        <view class='pdata-item'>
+          <view class='nme'>
+            <label>CODmn</label>
+            <label>高锰酸钾指数</label>
+          </view>
+          <view class='data'>{{CODmn}}</view>
+        </view>
+        <view class='pdata-item'>
+          <view class='nme'>
+            <label>NH3-H</label>
+            <label>氨氮</label>
+          </view>
+          <view class='data'>{{NH3}}</view>
+        </view>
+        <view class='pdata-item'>
+          <view class='nme'>
+            <label>TP</label>
+            <label>总磷</label>
+          </view>
+          <view class='data'>{{Tp}}</view>
+        </view>
+        <view class='pdata-item'>
+          <view class='nme'>
+            <label>ORP</label>
+            <label>氧化还原电位</label>
+          </view>
+          <view class='data'>{{ORP}}</view>
+        </view>
+        <view class='pdata-item'>
+          <view class='nme'>
+            <label>Transp</label>
+            <label>透明度</label>
+          </view>
+          <view class='data'>{{Transp}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="phist">
+      <canvas canvas-id="wxChartCanvas" class="canvas"></canvas>
+    </view>
+    <view class="phist">
+      <canvas canvas-id="wxWVCanvas" class="canvas"></canvas>
+    </view>
+  </view>
+  <view wx:if="{{status == '2'}}" class="pvideo">
+    <video src="https://www.yondo.cc/ris/images/11861574-1.mp4" controls="{{false}}" autoplay="{{true}}" loop="{{true}}" objectFit="fill"></video>
+  </view>
+  <view wx:if="{{status == '3'}}" class="ptext">
+    {{rivers[idx].chiefDuty}}
+  </view>
+  <view wx:if="{{status == '4'}}" class="ptext">
+    <progress backgroundColor="#ffffff" percent="{{dcent}}" style="width:100%;"></progress>
+    <view class="cpt-item">
+      <view class="cpt-content">
+        <view class="cpt-head cpt-opt">
+          <navigator url="/pages/riverinfo/addworkinfo_view?id=001&txt=2017年10月28日巡河记录">
+            <text class="cpt-space1">2017年10月28日巡河记录</text>
+          </navigator>
+          <view class="imgcontent" bindtap='dwnLogsFile'>
+            <image src='/image/pdf.png' />
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="cpt-item">
+      <view class="cpt-content">
+        <view class="cpt-head cpt-opt">
+          <navigator url="/pages/riverinfo/addworkinfo_view?id=002&txt=2017年11月2日巡河记录">
+            <text class="cpt-space1">2017年11月2日巡河记录</text>
+          </navigator>
+          <view class="imgcontent" bindtap='dwnLogsFile'>
+            <image src='/image/pdf.png' />
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="cpt-item">
+    </view>
+    <view class="create" hover-class="act-create">
+      <button class="custBtn" bindtap='createfeedback'>
+        <image src="/image/plus.png"></image>
+      </button>
+    </view>
+  </view>
+  <view wx:if="{{status == '5'}}" class="ptext">
+    <navigator url="/pages/feedback/feedbackinfo?id=004&txt=严重工业污染">
+      <view class="cpt-item">
+        <view class="cpt-content">
+          <view class="cpt-head">
+            <text class="cpt-space">严重工业污染</text>
+          </view>
+        </view>
+      </view>
+    </navigator>
+    <navigator url="/pages/feedback/feedbackinfo?id=005&txt=河水变黑">
+      <view class="cpt-item">
+        <view class="cpt-content">
+          <view class="cpt-head">
+            <text class="cpt-space">河水变黑</text>
+          </view>
+        </view>
+      </view>
+    </navigator>
+    <view class="cpt-item">
+    </view>
+  </view>
 </view>

@@ -27,6 +27,7 @@ Page({
     let rows = []
     util.Post(this, "LOAD", null, function (that, data) {
       for (var i = 0; i < data.rows.length; i++) {
+        data.rows[i].voted = false;
         data.rows[i].DO = ((Math.round(10 * Math.random()) + 40) * 100) / 100
         data.rows[i].ORP = ((Math.round(10 * Math.random()) + 7) * 100) / 100
         data.rows[i].CODmn = ((Math.round(10 * Math.random()) + 60) * 100) / 100
@@ -60,6 +61,22 @@ Page({
         })
       }
     });
+  }, dothumbs: function (e) {
+    let id = e.currentTarget.dataset.id
+    let river = this.data.rivers
+    for (let i = 0; i < river.length; i++) {
+      if (river[i].riverNo == id) {
+        river[i].voted = !river[i].voted
+        if (river[i].voted) {
+          river[i].DO += 1
+        } else {
+          river[i].DO -= 1
+        }
+      }
+    }
+    this.setData({
+      rivers: river
+    })
   },
   onPullDownRefresh() {
     util.Post(this, "LOAD", null, function (that, data) {
