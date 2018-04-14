@@ -46,6 +46,12 @@
 					"name": "voteact",
 					"pathName": "pages/vote/voteact",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "allriver",
+					"pathName": "pages/riverinfo/allriver",
+					"query": ""
 				}
 			]
 		}

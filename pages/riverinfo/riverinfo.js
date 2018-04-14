@@ -125,7 +125,7 @@ Page({
           return val.toFixed(2);
         }
       }, {
-        name: 'NH3-H',
+        name: 'NH3-N',
         data: [((Math.round(40 * Math.random()) + 40) * 100) / 100
           , ((Math.round(40 * Math.random()) + 40) * 100) / 100
           , ((Math.round(40 * Math.random()) + 40) * 100) / 100

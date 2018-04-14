@@ -60,7 +60,7 @@
         <view class="table">
           <view class="table-body">
             <view class="tr bg-w">
-              <view class="th ">NH3-H</view>
+              <view class="th ">NH3-N</view>
               <view class="th ">Tp</view>
               <view class="th ">Transp</view>
             </view>

@@ -108,7 +108,7 @@
         </view>
         <view class='pdata-item'>
           <view class='nme'>
-            <label>NH3-H</label>
+            <label>NH3-N</label>
             <label>氨氮</label>
           </view>
           <view class='data'>{{NH3}}</view>
